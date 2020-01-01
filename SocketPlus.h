@@ -41,6 +41,7 @@ private:
 	static int TIME_OUT;
 
 public:
+	int getSocketID()const { return g_fd_ArrayC; }
 	// 设置超时时间[s]
 	static void SetTimeOutTime(int nTime) { TIME_OUT = nTime * 1000; }
 	inline Connect(): g_fd_ArrayC(0), m_tick() { }
@@ -155,7 +156,7 @@ public:
 			{
 				if (g_fd_ArrayC[nLoopi].timeout())
 				{
-					printf("-关闭超时客户端[%d]. \n", g_fd_ArrayC[nLoopi]);
+					printf("-关闭超时客户端[%d]. \n", g_fd_ArrayC[nLoopi].getSocketID());
 					CloseClient(nLoopi);
 				}
 			}

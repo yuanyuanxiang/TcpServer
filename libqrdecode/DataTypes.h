@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef DATATYPES_H
+	#define DATATYPES_H		// 包含了基本数据结构
+#endif
+
 /** 
 * @file DataTypes.h
 * @brief 本文档定义了程序可能用到的数据类型
@@ -11,7 +15,7 @@
 #define LINUX_CPP
 #endif
 
-#include <math.h>
+#include <cmath>
 typedef int BOOL;
 typedef unsigned char BYTE;
 typedef unsigned char uchar;
@@ -20,7 +24,7 @@ typedef unsigned int uint;
 #define MAX_MODULESIZE		177		// QR码最大尺寸
 typedef BYTE qrMat[MAX_MODULESIZE];	// QR码比特矩阵
 
-#define COLORED_QR 1 // 是否彩色QR码
+#define COLORED_QR 0 // 是否彩色QR码
 
 #define TRY_HARD 1 // 某些很难解析的二维码需要开启此开关
 
@@ -253,7 +257,7 @@ public:
 	}
 	friend float2 abs(const float2 & point)
 	{
-		return float2(fabs(point.x), fabs(point.y));
+		return float2(abs(point.x), abs(point.y));
 	}
 };
 
@@ -434,7 +438,7 @@ public:
 	}
 	friend float3 abs(const float3 & point)
 	{
-		return float3(fabs(point.x), fabs(point.y), fabs(point.z));
+		return float3(abs(point.x), abs(point.y), abs(point.z));
 	}
 };
 
@@ -668,7 +672,7 @@ inline float _Distance(const float3 & P, const float3 & Q)
 
 inline float _Distance(const float & P, const float & Q)
 {
-	return fabs(P - Q);
+	return abs(P - Q);
 }
 
 /// 模
