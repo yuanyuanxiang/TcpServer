@@ -253,7 +253,7 @@ public:
 	}
 	friend float2 abs(const float2 & point)
 	{
-		return float2(abs(point.x), abs(point.y));
+		return float2(fabs(point.x), fabs(point.y));
 	}
 };
 
@@ -434,7 +434,7 @@ public:
 	}
 	friend float3 abs(const float3 & point)
 	{
-		return float3(abs(point.x), abs(point.y), abs(point.z));
+		return float3(fabs(point.x), fabs(point.y), fabs(point.z));
 	}
 };
 
@@ -668,7 +668,7 @@ inline float _Distance(const float3 & P, const float3 & Q)
 
 inline float _Distance(const float & P, const float & Q)
 {
-	return abs(P - Q);
+	return fabs(P - Q);
 }
 
 /// ģ
